@@ -1,5 +1,5 @@
 let correctNumber = getRandomNumber();
-console.log(correctNumber);
+
 
 window.onload = function () {
     document.getElementById("number-submit").addEventListener("click", playGame);
@@ -8,11 +8,22 @@ window.onload = function () {
 
 function playGame(){
     let numberGuess = document.getElementById("number-guess").value;
-    console.log(numberGuess);
+    console.log(correctNumber);
+    if(numberGuess > correctNumber){
+        console.log("guess too high");
+    }else if(numberGuess < correctNumber){
+        console.log("guess too low");
+    }else{
+        console.log("guess is correct");
+    }
 }
 
 function getRandomNumber(){
     let randomNumber = Math.random();
     let wholeNumber = Math.floor(randomNumber * 100) + 1;
     return wholeNumber;
+}
+
+function initGame(){
+
 }
