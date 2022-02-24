@@ -1,12 +1,13 @@
 let guesses=[];
 let correctNumber = getRandomNumber();
 
-
+//loading script 
 window.onload = function () {
     document.getElementById("number-submit").addEventListener("click", playGame);
     document.getElementById("restart-game").addEventListener("click", initGame);
 };
 
+//starting the game
 function playGame(){
     let numberGuess = document.getElementById("number-guess").value;
     displayHistory();
@@ -15,6 +16,7 @@ function playGame(){
     displayHistory();
 }
 
+//logic for displaying result
 function displayResult(numberGuess){
     if(numberGuess > correctNumber){
         showNumberAbove();
@@ -25,6 +27,7 @@ function displayResult(numberGuess){
     }
 }
 
+//To restart the game
 function initGame(){
     correctNumber = getRandomNumber();
     guesses=[];
@@ -33,21 +36,25 @@ function initGame(){
 
 }
 
+//clearing history
 function resetResultContent() {
     document.getElementById("result").innerHTML = "";
   }
 
+//generating random number 
 function getRandomNumber(){
     let randomNumber = Math.random();
     let wholeNumber = Math.floor(randomNumber * 100) + 1;
     return wholeNumber;
 }
 
+//saving history using guesses array
 function saveGuessHistory(guess){
     guesses.push(guess);
     console.log(guesses);
 }
 
+//displaying history
 function displayHistory() {
     let index= guesses.length-1;
     let list = "<ul class='list-group'>";
@@ -77,6 +84,7 @@ function getDialog(dialogType, text) {
   return dialog;
 }
 
+//showing won message
 function showYouWon() {
     const text = "Awesome job, you got it!";
   
@@ -85,6 +93,7 @@ function showYouWon() {
     document.getElementById("result").innerHTML = dialog;
   }
   
+//showing entered number is high
 function showNumberAbove() {
     const text = "Your guess is too high!";
     
@@ -92,6 +101,7 @@ function showNumberAbove() {
     document.getElementById("result").innerHTML = dialog;
   }
   
+//showing entered number is low
 function showNumberBelow() {
     const text = "Your guess is too low!";
    
