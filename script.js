@@ -1,3 +1,4 @@
+let guesses=[];
 let correctNumber = getRandomNumber();
 
 
@@ -10,6 +11,8 @@ function playGame(){
     let numberGuess = document.getElementById("number-guess").value;
     
     displayResult(numberGuess);
+    saveGuessHistory(numberGuess);
+    displayHistory();
 }
 
 function displayResult(numberGuess){
@@ -22,15 +25,33 @@ function displayResult(numberGuess){
     }
 }
 
+function initGame(){
+
+}
+
 function getRandomNumber(){
     let randomNumber = Math.random();
     let wholeNumber = Math.floor(randomNumber * 100) + 1;
     return wholeNumber;
 }
 
-function initGame(){
-
+function saveGuessHistory(guess){
+    guesses.push(guess);
+    console.log(guesses);
 }
+
+function displayHistory() {
+    let index= guesses.length-1;
+    let list = "<ul class='list-group'>";
+   
+     while(index>=0) {
+      list +=
+        "<li class='list-group-item'> You guessed  " + guesses[index] + "</li>";
+        index-=1;
+    }
+    list += "</ul>";
+    document.getElementById("history").innerHTML = list;
+  }
 
 
 function getDialog(dialogType, text) {
