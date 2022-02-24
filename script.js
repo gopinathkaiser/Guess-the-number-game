@@ -9,7 +9,7 @@ window.onload = function () {
 
 function playGame(){
     let numberGuess = document.getElementById("number-guess").value;
-    
+    displayHistory();
     displayResult(numberGuess);
     saveGuessHistory(numberGuess);
     displayHistory();
@@ -26,8 +26,16 @@ function displayResult(numberGuess){
 }
 
 function initGame(){
+    correctNumber = getRandomNumber();
+    guesses=[];
+    resetResultContent();
+    displayHistory();
 
 }
+
+function resetResultContent() {
+    document.getElementById("result").innerHTML = "";
+  }
 
 function getRandomNumber(){
     let randomNumber = Math.random();
