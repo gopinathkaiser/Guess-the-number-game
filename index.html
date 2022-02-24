@@ -4,9 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Guess the number</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="script.js"></script>
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-info">
+        <!-- Navbar-->
+        <a class="navbar-brand" href="#">Guess The Number</a>
+      </nav>
+      <main>
+        <h1 class="banner p-3">1.2.3.</h1>
+        <div class="form-group">
+          <input
+            id="number-guess"
+            class="form-control form-control-lg"
+            type="number"
+            placeholder="What's your guess?"
+          />
+        </div>
+        <div id="result">
+          <!-- result-->
+        </div>
+        <button type="button" id="number-submit" class="btn btn-lg btn-primary">
+          Check Me
+        </button>
+        <button type="button" id="restart-game" class="btn btn-lg btn-light">
+          Restart
+        </button>
+        <div id="history" class="list-group">
+          <!-- history-->
+        </div>
+      </main>
+
+
     
 </body>
 </html>
