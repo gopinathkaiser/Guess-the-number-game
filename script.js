@@ -9,6 +9,10 @@ window.onload = function () {
 function playGame(){
     let numberGuess = document.getElementById("number-guess").value;
     console.log(correctNumber);
+   displayResult(numberGuess);
+}
+
+function displayResult(numberGuess){
     if(numberGuess > correctNumber){
         console.log("guess too high");
     }else if(numberGuess < correctNumber){
